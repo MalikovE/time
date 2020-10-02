@@ -1,4 +1,7 @@
-package time.os;
+package mocks;
+
+import time.os.OS;
+import time.os.TimeSetter;
 
 import java.time.LocalDateTime;
 

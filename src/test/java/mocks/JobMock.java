@@ -1,4 +1,6 @@
-package time.scheduler;
+package mocks;
+
+import time.scheduler.Job;
 
 public class JobMock implements Job {
     @Override

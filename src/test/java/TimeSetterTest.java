@@ -2,9 +2,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import time.os.OS;
-import time.os.OSMock;
+import mocks.OSMock;
 import time.os.TimeSetter;
-import time.os.TimeSetterMock;
+import mocks.TimeSetterMock;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;

@@ -1,5 +1,7 @@
-package time.ntp;
+package mocks;
 
+
+import time.ntp.NtpClient;
 
 import java.net.InetAddress;
 import java.time.LocalDateTime;

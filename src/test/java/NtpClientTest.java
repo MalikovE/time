@@ -2,7 +2,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import time.ntp.NtpClient;
-import time.ntp.NtpClientMock;
+import mocks.NtpClientMock;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;

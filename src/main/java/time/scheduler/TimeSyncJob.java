@@ -1,5 +1,6 @@
 package time.scheduler;
 
+import time.job.Job;
 import time.ntp.NtpClient;
 import time.os.TimeSetter;
 

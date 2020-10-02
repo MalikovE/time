@@ -5,6 +5,7 @@ import time.ntp.NtpClient;
 import mocks.NtpClientMock;
 
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
@@ -15,7 +16,8 @@ public class NtpClientTest {
 
     @Before
     public void setUp() throws Exception {
-        ntpClient = new NtpClientMock(InetAddress.getLocalHost());
+        InetSocketAddress inetSocketAddress = new InetSocketAddress(InetAddress.getLocalHost(), 80);
+        ntpClient = new NtpClientMock(inetSocketAddress);
     }
 
     @Test

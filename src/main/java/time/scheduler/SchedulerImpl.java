@@ -1,5 +1,7 @@
 package time.scheduler;
 
+import time.job.Job;
+
 public class SchedulerImpl implements Scheduler {
 
     private int[] schedule;

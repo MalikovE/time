@@ -1,9 +1,9 @@
 package time.ntp;
 
-import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.time.LocalDateTime;
 
 public interface NtpClient {
-    InetAddress getNtpServer();
+    InetSocketAddress getNtpServer();
     LocalDateTime getTime();
 }

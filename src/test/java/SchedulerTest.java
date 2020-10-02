@@ -7,12 +7,13 @@ import time.os.OS;
 import mocks.OSMock;
 import time.os.TimeSetter;
 import mocks.TimeSetterMock;
-import time.scheduler.Job;
+import time.job.Job;
 import time.scheduler.Scheduler;
 import time.scheduler.SchedulerImpl;
 import time.scheduler.TimeSyncJob;
 
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
 
 public class SchedulerTest {
 
@@ -22,7 +23,8 @@ public class SchedulerTest {
     @Before
     public void setUp() throws Exception {
         os = new OSMock();
-        NtpClient ntpClient = new NtpClientMock(InetAddress.getLocalHost());
+        InetSocketAddress inetSocketAddress = new InetSocketAddress(InetAddress.getLocalHost(), 80);
+        NtpClient ntpClient = new NtpClientMock(inetSocketAddress);
         TimeSetter timeSetter = new TimeSetterMock(os);
         Job job = new TimeSyncJob(ntpClient, timeSetter);
         scheduler = new SchedulerImpl(job);

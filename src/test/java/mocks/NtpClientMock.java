@@ -3,19 +3,19 @@ package mocks;
 
 import time.ntp.NtpClient;
 
-import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.time.LocalDateTime;
 
 public class NtpClientMock implements NtpClient {
 
-    private final InetAddress ntpServer;
+    private final InetSocketAddress ntpServer;
 
-    public NtpClientMock(final InetAddress ntpServer) {
+    public NtpClientMock(final InetSocketAddress ntpServer) {
         this.ntpServer = ntpServer;
     }
 
     @Override
-    public InetAddress getNtpServer() {
+    public InetSocketAddress getNtpServer() {
         return this.ntpServer;
     }
 

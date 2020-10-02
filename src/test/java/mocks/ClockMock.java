@@ -1,27 +1,21 @@
 package mocks;
 
-import time.os.OS;
+import time.clock.Clock;
 
 import java.time.LocalDateTime;
 
-public class OSMock implements OS {
+public class ClockMock implements Clock {
 
-    private LocalDateTime systemTime;
-    private int operationCounter = 0;
+    private LocalDateTime dateTime;
 
     @Override
-    public LocalDateTime getCurrentSystemDateTime() {
-        return systemTime;
+    public LocalDateTime getDateTime() {
+        return dateTime;
     }
 
     @Override
-    public void setSystemDateTime(LocalDateTime localDateTime) {
-        systemTime = localDateTime;
-        operationCounter++;
+    public void setDateTime(LocalDateTime localDateTime) {
+        dateTime = localDateTime;
     }
 
-    @Override
-    public int getOperationCount() {
-        return operationCounter;
-    }
 }

@@ -1,9 +1,8 @@
-package time.os;
+package time.clock;
 
 import java.time.LocalDateTime;
 
-public interface OS {
-    LocalDateTime getCurrentSystemDateTime();
-    void setSystemDateTime(LocalDateTime localDateTime);
-    int getOperationCount();
+public interface Clock {
+    LocalDateTime getDateTime();
+    void setDateTime(LocalDateTime localDateTime);
 }

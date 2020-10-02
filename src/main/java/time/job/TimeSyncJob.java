@@ -1,24 +1,23 @@
-package time.scheduler;
+package time.job;
 
-import time.job.Job;
+import time.clock.Clock;
 import time.ntp.NtpClient;
-import time.os.TimeSetter;
 
 import java.time.LocalDateTime;
 
 public class TimeSyncJob implements Job {
 
     private NtpClient ntpClient;
-    private TimeSetter timeSetter;
+    private Clock clock;
 
-    public TimeSyncJob(NtpClient ntpClient, TimeSetter timeSetter) {
+    public TimeSyncJob(NtpClient ntpClient, Clock clock) {
         this.ntpClient = ntpClient;
-        this.timeSetter = timeSetter;
+        this.clock = clock;
     }
 
     @Override
     public void execute() {
         LocalDateTime ntpTime = ntpClient.getTime();
-        timeSetter.setTime(ntpTime);
+        clock.setDateTime(ntpTime);
     }
 }
